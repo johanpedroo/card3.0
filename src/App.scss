@@ -1,3 +1,6 @@
+html, body, #root {
+  max-height: 100vh;
+}
 
 .root {
   display: flex;
@@ -14,10 +17,10 @@
   max-height: calc(100vh - 60px);
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  margin: 30px auto;
+  margin: 0 auto;
   flex-wrap: wrap;
   display: flex;
-  padding: 0;
+  padding: 30px 0;
   justify-content: space-around;
   align-items: flex-start;
   align-content: flex-start;
@@ -37,8 +40,8 @@
 .item {
   flex: 1;
   margin: 5px;
-  max-height: 150px;
-  height: 24vh;
+  max-height: 20vh;
+  height: 20vh;
   max-width: 24vh;
   @media only screen and (max-width: 600px) {
     max-height: initial;
@@ -46,8 +49,8 @@
     max-width: 25vw;
   }
   img {
-    max-height: 150px;
-    height: 24vh;
+    max-height: 20vh;
+    height: 20vh;
     @media only screen and (max-width: 600px) {
       max-height: initial;
       height: initial;
@@ -213,12 +216,7 @@
     -moz-osx-font-smoothing: grayscale;
     background-color: rgba(#f4f5f9, 0.7);
   }
-  html,
-  body,
-  #root {
-    height: 100%;
-    margin: 0;
-  }
+
 }
 
 .background {
