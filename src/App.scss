@@ -1,33 +1,226 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.root {
   display: flex;
+  height: 100%;
+  box-sizing: border-box;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Base styles
+.list {
+  width: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.img-open {
+  position: absolute;
+  display: block;
+  height: 90vh;
+  max-height: 90vh;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.item {
+  flex: 1;
+  margin: 5px;
+  max-height: 150px;
+  height: 24vh;
+  max-width: 24vh;
+  img {
+    max-height: 150px;
+    height: 24vh;
+  }
+}
+
+// Stylized
+.stylizedList {
+  position: relative;
+  z-index: 0;
+  background-color: #f3f3f3;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  outline: none;
+}
+.stylizedItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #efefef;
+  box-sizing: border-box;
+  user-select: none;
+
+  color: #333;
+  font-weight: 400;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+// Drag handle
+.handle {
+  display: block;
+  width: 18px;
+  height: 18px;
+  opacity: 0.25;
+  margin-right: 20px;
+  cursor: row-resize;
+}
+
+// Horizontal list
+.horizontalList {
+  display: flex;
+  width: 600px;
+  white-space: nowrap;
+}
+
+.horizontalItem {
+  display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 200px;
+  border-right: 1px solid #efefef;
+  border-bottom: 0;
 }
 
-.App-link {
-  color: #61dafb;
+// Grid
+.grid {
+  display: block;
+  width: 130 * 4px;
+  height: 350px;
+  white-space: nowrap;
+  border: 0;
+  background-color: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.gridItem {
+  float: left;
+  width: 130px;
+  padding: 8px;
+  background: transparent;
+  border: 0;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #efefef;
+
+    font-size: 28px;
+
+    span {
+      display: none;
+    }
   }
-  to {
-    transform: rotate(360deg);
+}
+
+// Nested
+.category {
+  height: auto;
+
+  .categoryHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 10px 14px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #efefef;
+    user-select: none;
   }
+
+  .categoryList {
+    height: auto;
+  }
+}
+
+// Divider
+.divider {
+  padding: 10px 20px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #efefef;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #333;
+}
+
+// Helper styles
+.helper {
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2),
+  0 -5px 5px -5px rgba(0, 0, 0, 0.2);
+}
+.stylizedHelper {
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2),
+  0 -5px 5px -5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: row-resize;
+
+  &.horizontalItem {
+    cursor: col-resize;
+  }
+  &.gridItem {
+    background-color: transparent;
+    white-space: nowrap;
+    box-shadow: none;
+
+    .wrapper {
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.shrinkedHelper {
+  height: 20px !important;
+}
+
+:global {
+  body {
+    font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgba(#f4f5f9, 0.7);
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  background: #33333377;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
