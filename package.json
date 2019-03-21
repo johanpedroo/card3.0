@@ -2,6 +2,7 @@
   "name": "card3.0",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://johanpedro.com.br/card3.0/",
   "devDependencies": {
     "node-sass": "^4.11.0"
   },
