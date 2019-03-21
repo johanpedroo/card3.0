@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://johanpedro.com.br/card3.0/",
+  "license": "wtfpl",
   "devDependencies": {
     "node-sass": "^4.11.0"
   },
