@@ -14,12 +14,11 @@
   max-height: 100vh;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  max-width: 900px;
-  margin: 0 auto;
+  margin: 30px auto;
   flex-wrap: wrap;
   display: flex;
   padding: 0;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   align-content: flex-start;
 }

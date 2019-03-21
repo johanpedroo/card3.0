@@ -43,8 +43,7 @@ class App extends Component {
         }));
     };
 
-    closeImg = (e) => {
-        console.log(e.type)
+    closeImg = () => {
         setTimeout(() => {
             this.setState({openImg: false});
         },200)
