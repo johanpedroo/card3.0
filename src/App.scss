@@ -27,8 +27,8 @@
 .img-open {
   position: absolute;
   display: block;
-  height: 90vh;
   max-height: 90vh;
+  max-width: 95vw;
   z-index: 1000;
   top: 50%;
   left: 50%;
@@ -41,9 +41,19 @@
   max-height: 150px;
   height: 24vh;
   max-width: 24vh;
+  @media only screen and (max-width: 600px) {
+    max-height: initial;
+    height: initial;
+    max-width: 25vw;
+  }
   img {
     max-height: 150px;
     height: 24vh;
+    @media only screen and (max-width: 600px) {
+      max-height: initial;
+      height: initial;
+      max-width: 25vw;
+    }
   }
 }
 
@@ -89,6 +99,7 @@
 .horizontalList {
   display: flex;
   width: 600px;
+  max-width: 100vw;
   white-space: nowrap;
 }
 

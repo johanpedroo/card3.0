@@ -34,9 +34,11 @@ class App extends Component {
         ],
         openImg: false
     };
-    onSortEnd = ({oldIndex, newIndex,...other}) => {
+    onSortEnd = ({oldIndex, newIndex}) => {
         if(oldIndex === newIndex){
-            return this.setState({openImg: this.state.items[oldIndex]});
+            setTimeout(() => {
+                return this.setState({openImg: this.state.items[oldIndex]});
+            },200)
         }
         this.setState(({items}) => ({
             items: arrayMove(items, oldIndex, newIndex),
