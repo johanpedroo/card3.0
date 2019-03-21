@@ -46,7 +46,9 @@ class App extends Component {
     };
 
     closeImg = () => {
-        this.setState({openImg: false});
+        setTimeout(() => {
+            this.setState({openImg: false});
+        },200)
     };
 
     render() {
@@ -55,7 +57,7 @@ class App extends Component {
                 axis="xy"
                 items={this.state.items} onSortEnd={this.onSortEnd} />
             {
-                this.state.openImg && <div className="background" onClick={this.closeImg}><img className="img-open" src={`./image/mm_${this.state.openImg}.png`} alt={this.state.openImg}/></div>
+                this.state.openImg && <div className="background" onTouchStart={this.closeImg} onClick={this.closeImg}><img className="img-open" src={`./image/mm_${this.state.openImg}.png`} alt={this.state.openImg}/></div>
             }
         </>;
     }
