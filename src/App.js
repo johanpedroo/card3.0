@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import style from './App.scss';
+import './App.scss';
 import { SortableContainer, SortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 
-console.log(style);
 const SortableItem = SortableElement(({value}) => {
     return <li className="item" style={{listStyle: 'none'}}><img src={`./image/mm_${value}.png`} alt={value}/></li>
 });
 
 const SortableList = SortableContainer(({items}) => {
     return (
-        <ul onClick={(e) => console.log(e.target)}
-            className="list horizontalList">
+        <ul className="list horizontalList">
             {items.map((value, index) => (
                 <SortableItem key={`item-${index}`} index={index} value={value}/>
             ))}
